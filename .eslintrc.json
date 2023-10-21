@@ -1,0 +1,14 @@
+{
+	"env": {
+		"node": true,
+		"es6": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint", "node"],
+	"extends": ["plugin:@typescript-eslint/recommended"],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"rules": {}
+}
