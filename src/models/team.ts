@@ -8,10 +8,3 @@ export default class Team extends Model {
 	@Column
 	name: string;
 }
-// export const Team = sequelize.define("Team", {
-// 	id: {
-// 		type: DataTypes.NUMBER,
-// 		primaryKey: true,
-// 	},
-// 	name: DataTypes.STRING,
-// });
