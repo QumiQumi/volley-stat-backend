@@ -1,3 +1,4 @@
+import { Players } from "@/models/Players";
 import TeamService from "@/services/team-service";
 import { JSONRPCServer, SimpleJSONRPCMethod } from "json-rpc-2.0";
 
@@ -8,7 +9,7 @@ export function registerRoutes(server: JSONRPCServer, routes: Routes) {
 	});
 }
 export const routes: Routes = {
-	teams: async () => {
-		return await TeamService.getTeams();
-	},
+	teams: TeamService.getTeams,
+	teamTypes: TeamService.getTeamTypes,
+	players: () => Players.findAll({ limit: 50 }),
 };

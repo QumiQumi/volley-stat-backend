@@ -12,6 +12,16 @@ const server = new JSONRPCServer();
 
 registerRoutes(server, routes);
 
+// app.use(/\/json-rpc\/.+/, (req, res, next) => {
+// 	req.url = "/json-rpc";
+// 	next();
+// });
+app.use((req, res, next) => {
+	if (req.url.startsWith("/json-rpc/")) {
+		req.url = "/json-rpc";
+	}
+	next();
+});
 app.post("/json-rpc", (req, res) => {
 	const request = req.body;
 

@@ -8,5 +8,10 @@ const sequelize = new Sequelize({
 	password: process.env.DB_PASSWORD,
 	database: process.env.DB_DATABASE,
 	models: [__dirname + "/models"],
+
+	define: {
+		timestamps: false,
+		underscored: true,
+	},
 });
 export default sequelize;
