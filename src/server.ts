@@ -1,5 +1,6 @@
 import "dotenv/config";
 
+import cors from "cors";
 import express from "express";
 import { JSONRPCServer } from "json-rpc-2.0";
 import "./database";
@@ -7,6 +8,11 @@ import { registerRoutes, routes } from "./routes/router";
 
 const app = express();
 app.use(express.json());
+app.use(
+	cors({
+		origin: true,
+	})
+);
 
 const server = new JSONRPCServer();
 
